@@ -43,7 +43,7 @@ public class Perfil003BZ {
             return response.conflict("Ya existe un perfil con el mismo nombre");
         }
 
-        Catalogo tipo = catalogoRepository.findById(rqsv074.getTipo()).orElse(null);
+        Catalogo tipo = catalogoRepository.findByClave(rqsv074.getTipo()).orElse(null);
 
         if(tipo == null) {
             return response.notFound("No existe el tipo de perfil");
